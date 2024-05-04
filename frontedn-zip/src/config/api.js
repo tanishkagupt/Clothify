@@ -4,6 +4,8 @@ import axios from 'axios';
 // const DEPLOYED='https://pear-poised-hen.cyclic.app/' just example
 const LOCALHOST='https://e-com-clothing.vercel.app/'
 
+
+
 export const API_BASE_URL = LOCALHOST;
 
 const api = axios.create({
