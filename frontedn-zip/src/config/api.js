@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // const DEPLOYED='https://pear-poised-hen.cyclic.app/' just example
-const LOCALHOST='https://e-com-clothing.vercel.app/'
+const LOCALHOST='https://e-com-clothing-l0ce.onrender.com/'
 
 
 
