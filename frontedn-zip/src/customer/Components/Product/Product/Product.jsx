@@ -233,7 +233,7 @@ export default function Product() {
                                       defaultValue={option.value}
                                       type="checkbox"
                                       defaultChecked={option.checked}
-                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                      className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500"
                                       onChange={() =>
                                         handleFilter(option.value, section.id)
                                       }
@@ -471,7 +471,7 @@ export default function Product() {
 
         {/* pagination section */}
         <section className="w-full px-[3.6rem]">
-          <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border rounded-md">
+          <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border-black rounded-md">
             <Pagination
               count={customersProduct.products?.totalPages}
               color="primary"
