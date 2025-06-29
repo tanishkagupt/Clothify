@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge, Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import CartItem from "../Cart/CartItem";
@@ -7,8 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOrderById } from "../../../Redux/Customers/Order/Action";
 import AddressCard from "../adreess/AdreessCard";
 import { createPayment } from "../../../Redux/Customers/Payment/Action";
+import PaymentPopup from "../PaymentPopup/PaymentPopup";
 
 const OrderSummary = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isSuccessVisible, setIsSuccessVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -25,8 +28,9 @@ useEffect(()=>{
 },[orderId])
 
 const handleCreatePayment=()=>{
-  const data={orderId:order.order?._id,jwt}
-  dispatch(createPayment(data))
+  // const data={orderId:order.order?._id,jwt}
+  // dispatch(createPayment(data))
+  setIsPopupOpen(true)
 }
   
 
@@ -81,6 +85,26 @@ const handleCreatePayment=()=>{
           </div>
         </div>
       </div>
+      <PaymentPopup
+        open={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        onSuccess={() => setIsSuccessVisible(true)}
+      />
+
+      {isSuccessVisible && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <h2 style={{ color: "#10b981" }}>✅ Payment Successful</h2>
+            <p>Thank you for your payment.</p>
+            <button
+              className="submit-btn"
+              onClick={() => setIsSuccessVisible(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

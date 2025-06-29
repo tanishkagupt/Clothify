@@ -25,6 +25,7 @@ export default function NotFound() {
               </a>
               <a href="/" className="text-sm font-semibold text-gray-900">
                 Contact support <span aria-hidden="true">&rarr;</span>
+                
               </a>
             </div>
           </div>

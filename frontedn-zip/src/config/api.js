@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // const DEPLOYED='https://pear-poised-hen.cyclic.app/' just example
-const LOCALHOST='https://e-com-clothing-l0ce.onrender.com'
+const LOCALHOST='http://localhost:5454'; // Change this to your local server URL or deployed server URL
 
 
 
